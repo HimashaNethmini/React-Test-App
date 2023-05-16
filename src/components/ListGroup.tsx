@@ -4,9 +4,12 @@ import { useState } from "react";
 interface Props {
   items : string [];
   heading : string;
+  
+  //making a function to go for a new one when one of the cities is selected
+  onSelectItem: (item: string) =>void; // action after onclick
 }
 
-function ListGroup({ items, heading }: Props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   
 
@@ -19,7 +22,9 @@ function ListGroup({ items, heading }: Props) {
           <li 
           className = { selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
           key={item} 
-          onClick={() =>{ setSelectedIndex(index);} }
+          onClick={() =>{ setSelectedIndex(index);
+          onSelectItem (item);
+        } }
           >
             {item}
             </li>
