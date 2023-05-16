@@ -1,4 +1,6 @@
 import Alert from "./components/Alert";
+import Button from "./components/Button";
+
 
 /*import ListGroup from "./components/ListGroup";*/
 
@@ -24,7 +26,12 @@ function App(){
             <Alert>
                 Hello World
             </Alert>
+
+            <Button onClick={ ()=> console.log('Clicked')}>
+                Click Me
+            </Button>
         </div>
+        
     );
 }
 
